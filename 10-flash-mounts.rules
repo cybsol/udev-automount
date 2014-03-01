@@ -48,7 +48,7 @@ ACTION=="add", ENV{ID_FS_TYPE}=="vfat", RUN+="/bin/mount -t auto -o %E{mount_opt
 ACTION=="add", ENV{mount_options_ntfs}="gid=100,dmask=000,fmask=111,utf8,flush,rw,noatime,users"
 
 # add device to /etc/fstab
-ACTION=="add", ENV{ID_FS_TYPE}=="ntfs", RUN+="/bin/sed -i '$a\/dev/%k /media/%E{dir_name} ntfs-3g %E{mount_options_ntfs} 0 0' /etc/fstab"
+#ACTION=="add", ENV{ID_FS_TYPE}=="ntfs", RUN+="/bin/sed -i '$a\/dev/%k /media/%E{dir_name} ntfs-3g %E{mount_options_ntfs} 0 0' /etc/fstab"
 
 # mount device
 ACTION=="add", ENV{ID_FS_TYPE}=="ntfs", RUN+="/bin/mount -t ntfs-3g -o %E{mount_options_ntfs} /dev/%k '/media/%E{dir_name}'"
