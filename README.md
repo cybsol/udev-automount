@@ -1,24 +1,19 @@
-udev - pravidla pro automount
+udev - rules for automount
 =============================
 
-Popis
+Description
 -----
 
- *   Automaticky připojí flashku nebo paměťovou kartu s libovolným souborovým systémem (ext, vfat, ntfs,…)
- *   Připojí do /media
- *   Umožnit rw pro non-root uživatele
- *   Automaticky odpojí a smaže adresář po fyzickém odpojení (__doporučuje se před fyzickém odpojení provést příkaz příkaz *<code>sync</code>* který zapíše změny z cache na disky__)
+ *   Mounting into /media
+ *   RW permissions for users group (gid=100)
+ *   Will remove created directory after eject (__strongly recommended to use *<code>sync</code>* command before eject__)
 
-Instalace
+Installation
 ---------
 
-Je potřeba mít nainstalovaný program <code>blkid</code>, který se používá pro určení jmenovky.
+Require <code>blkid</code>, which used for label identify.
 
-Konfigurační soubory stačí umístit do této složky: <code>/etc/udev/rules.d/</code>
+Copy rules files to the directory: <code>/etc/udev/rules.d</code>
 
-a restartovat udev: <code>/etc/init.d/udev restart</code> 
+reload udev rules
 
-Další informace
----------------
-
-Další informace naleznete [zde](http://303rdlabs.maweb.eu/doku.php/programy#udev).
